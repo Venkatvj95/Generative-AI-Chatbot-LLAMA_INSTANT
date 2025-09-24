@@ -17,7 +17,8 @@ google_cse_id = "755f1b7126e8c49a6"
 # 🔍 Google Search Tool
 google_wrapper = GoogleSearchAPIWrapper(
     google_api_key=google_api_key,
-    google_cse_id=google_cse_id
+    google_cse_id=google_cse_id,
+    k = 1
 )
 search_tool = GoogleSearchRun(api_wrapper=google_wrapper)
 
@@ -52,3 +53,4 @@ if prompt := st.chat_input("Ask me anything..."):
         response = search_agent.run(prompt, callbacks=[st_cb])
         st.session_state.messages.append({"role": "assistant", "content": response})
         st.write(response)
+
